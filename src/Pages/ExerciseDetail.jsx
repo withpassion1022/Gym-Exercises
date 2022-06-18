@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ExerciseDetail = () => {
-  return (
+  return ( 
     <div>ExerciseDetail</div>
   )
 }
