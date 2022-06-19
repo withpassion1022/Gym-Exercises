@@ -9,7 +9,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises?.slice(
+  const currentExercises = exercises.slice(
     indexOfFirstExercise,
     indexOfLastExercise
   );
@@ -42,7 +42,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       </Stack>
 
       <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">
-        {exercises?.length > 9 && (
+        {exercises.length > 9 && (
           <Pagination
             color="standard"
             shape="rounded"
