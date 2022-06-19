@@ -5,11 +5,12 @@ import { Box } from "@mui/material";
 import Detail from "../components/Detail";
 import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercises from "../components/SimilarExercises";
-import { exerciseOptions, fetchData } from "../utils/fetchData";
+import { exerciseOptions, fetchData, youtubeOptions } from "../utils/fetchData";
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
   const { id } = useParams();
+  const [exerciseVideos, setExerciseVideos] = useState([]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -25,7 +26,11 @@ const ExerciseDetail = () => {
       );
       setExerciseDetail(exerciseDetailData);
 
-      
+      const exerciseVideosData = await fetchData(
+        `${youtubeSearchUrl}/search?q=${exerciseDetailData.name} exercise`,
+        youtubeOptions
+      );
+      setExerciseVideos(exerciseVideosData.contents);
     };
 
     fetchExercisesData();
@@ -34,7 +39,7 @@ const ExerciseDetail = () => {
   return (
     <Box sx={{ mt: { lg: "96px", xs: "60px" } }}>
       <Detail exerciseDetail={exerciseDetail} />
-      <ExerciseVideos />
+      <ExerciseVideos  exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises />
     </Box>
   );
