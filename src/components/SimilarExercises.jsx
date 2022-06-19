@@ -12,11 +12,8 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
         color="#000"
         mb="33px"
       >
-        Simila
-        <span style={{ color: "#FF2625", textTransform: "capitalize" }}>
-          Target Muscle
-        </span>
-        exercises
+        Simila <span style={{ color: "#FF2625", textTransform: "capitalize" }}>
+          Target Muscle </span>exercises
       </Typography>
       <Stack direction="row" sx={{ p: 2, position: "relative" }}>
         {targetMuscleExercises.length !== 0 ? (
@@ -25,6 +22,8 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
           <Loader />
         )}
       </Stack>
+
+
       <Typography
         sx={{
           fontSize: { lg: "44px", xs: "25px" },
@@ -35,11 +34,8 @@ const SimilarExercises = ({ targetMuscleExercises, equipmentExercises }) => {
         color="#000"
         mb="33px"
       >
-        Similar
-        <span style={{ color: "#FF2625", textTransform: "capitalize" }}>
-          Equipment
-        </span>
-        exercises
+        Similar <span style={{ color: "#FF2625", textTransform: "capitalize" }}>
+          Equipment</span> exercises
       </Typography>
       <Stack direction="row" sx={{ p: 2, position: "relative" }}>
         {equipmentExercises.length !== 0 ? (
